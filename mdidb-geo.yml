@@ -33,16 +33,26 @@ feign:
 hystrix:
     share-security-context: true
 
+security:
+  user:
+    name: user
+    password: user123
+    role:
+    - ACTUATOR
+    
 management:
-    security:
-        roles: ADMIN
-    context-path: /management
-    info:
-        git:
-            mode: full
-    health:
-        mail:
-            enabled: false # When using the MailService, configure an SMTP server and set this to true
+  context-path: /management
+  
+#management:
+#    security:
+#        roles: ADMIN
+#    context-path: /management
+#    info:
+#        git:
+#            mode: full
+#    health:
+#        mail:
+#            enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     jackson:
         serialization.write_dates_as_timestamps: false
@@ -60,9 +70,9 @@ spring:
             enabled: false
     thymeleaf:
         mode: XHTML
-security:
-    basic:
-        enabled: false
+#security:
+#    basic:
+#        enabled: false
 
 server:
     session:
